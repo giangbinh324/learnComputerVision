@@ -17,3 +17,8 @@ def display_images(l,titles=None,fontsize=12):
 im = cv2.imread('data/braille.jpeg')
 print(im.shape)
 plt.imshow(im)
+
+
+bw_im = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
+print(bw_im.shape)
+plt.imshow(bw_im)
