@@ -13,3 +13,7 @@ def display_images(l,titles=None,fontsize=12):
     fig.set_size_inches(fig.get_size_inches()*n)
     plt.tight_layout()
     plt.show()
+
+im = cv2.imread('data/braille.jpeg')
+print(im.shape)
+plt.imshow(im)
