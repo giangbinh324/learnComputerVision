@@ -22,3 +22,13 @@ plt.imshow(im)
 bw_im = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
 print(bw_im.shape)
 plt.imshow(bw_im)
+
+
+im = cv2.blur(bw_im,(3,3))
+im = cv2.adaptiveThreshold(im, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+                           cv2.THRESH_BINARY_INV, 5, 4)
+im = cv2.medianBlur(im, 3)
+_,im = cv2.threshold(im, 0, 255, cv2.THRESH_OTSU)
+im = cv2.GaussianBlur(im, (3,3), 0)
+_,im = cv2.threshold(im, 0, 255, cv2.THRESH_OTSU)
+plt.imshow(im)
